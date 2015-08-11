@@ -1,0 +1,28 @@
+<h1>Listing cancells</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cancells.each do |cancell| %>
+      <tr>
+        <td><%= cancell.date %></td>
+        <td><%= cancell.week %></td>
+        <td><%= cancell.subject %></td>
+        <td><%= cancell.teacher %></td>
+
+        <td><%= link_to 'Show', cancell %></td>
+        <td><%= link_to 'Edit', edit_cancell_path(cancell) %></td>
+        <td><%= link_to 'Destroy', cancell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cancell', new_cancell_path %>
